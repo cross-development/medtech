@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medtech/screens/splash_screen.dart';
 
 class MedTech extends StatelessWidget {
   const MedTech({Key? key}) : super(key: key);
@@ -6,9 +7,6 @@ class MedTech extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MedTech',
-      theme: ThemeData(),
-      home: null,
-    );
+        title: 'MedTech', theme: ThemeData(), home: const SplashScreen());
   }
 }
