@@ -18,6 +18,7 @@ class OnboardingNav extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TextButtonWidget(
+            isFullWidth: false,
             text: "Skip",
             onPressed: () => controller.jumpToPage(4),
             fontWeight: FontWeight.w400,
@@ -42,6 +43,7 @@ class OnboardingNav extends StatelessWidget {
             ),
           ),
           TextButtonWidget(
+            isFullWidth: false,
             text: "Next",
             fontWeight: FontWeight.w700,
             onPressed: () => controller.nextPage(

@@ -48,23 +48,17 @@ class OnboardingAuth extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 34),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButtonWidget(
-                isUpperCase: true,
-                text: 'Sign up with email',
-                onPressed: _handleNavigateToSighUp,
-              ),
+            ElevatedButtonWidget(
+              isUpperCase: true,
+              text: 'Sign up with email',
+              onPressed: _handleNavigateToSighUp,
             ),
             const SizedBox(height: 10),
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedIconButtonWidget(
-                isUpperCase: true,
-                icon: const Icon(Icons.android),
-                text: 'Continue with Gmail',
-                onPressed: () {},
-              ),
+            OutlinedIconButtonWidget(
+              isUpperCase: true,
+              icon: const Icon(Icons.android),
+              text: 'Continue with Gmail',
+              onPressed: () {},
             ),
             const SizedBox(height: 10),
             TextButtonWidget(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {
   final String text;
+  final bool isFullWidth;
   final bool isUpperCase;
   final void Function() onPressed;
   final Color? color;
@@ -13,6 +14,7 @@ class ElevatedButtonWidget extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.fontSize = 16,
+    this.isFullWidth = true,
     this.isUpperCase = false,
     this.fontWeight = FontWeight.w700,
     this.color = const Color(0xFFFFFFFF),
@@ -20,24 +22,27 @@ class ElevatedButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.symmetric(vertical: 13),
-        ),
-        shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(56),
+    return SizedBox(
+      width: isFullWidth ? double.infinity : null,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(
+            const EdgeInsets.symmetric(vertical: 13),
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(56),
+            ),
           ),
         ),
-      ),
-      child: Text(
-        isUpperCase ? text.toUpperCase() : text,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize,
-          fontWeight: fontWeight,
+        child: Text(
+          isUpperCase ? text.toUpperCase() : text,
+          style: TextStyle(
+            color: color,
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+          ),
         ),
       ),
     );
